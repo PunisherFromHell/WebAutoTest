@@ -28,12 +28,13 @@ class WebCardTest {
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
         driver = new ChromeDriver(options);
-        driver = new ChromeDriver();
+        driver.get("http://localhost:9999");
     }
 
     @AfterEach
-    void teardown() {
+    public void afterEach() {
         driver.quit();
+        driver = null;
     }
 
     @Test
